@@ -1,0 +1,67 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  font-family: "Muller", "Arial", sans-serif;
+  color: @basic-black;
+  overflow-wrap: break-word;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+//  Наследуем шрифты для инпутов и кнопок
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// visually-hidden доступно скрываем текст
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
