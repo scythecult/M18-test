@@ -13,7 +13,14 @@ html > body > header {
   padding-bottom: 10px;
   padding-left: 20px;
 
-  @media (min-width: @desktop-width) {
+  @media (min-width: 1200px) {
+    padding-top: 24px;
+    padding-right: 60px;
+    padding-bottom: 24px;
+    padding-left: 80px;
+  }
+
+  @media (min-width: 1440px) {
     padding-top: 48px;
     padding-right: 89px;
     padding-bottom: 48px;
@@ -27,6 +34,15 @@ html > body > header > nav.navigation {
   align-items: center;
 }
 
+html > body > header > nav.navigation > a.logo {
+  display: block;
+
+  @media (min-width: 1440px) {
+    width: 200px;
+    height: 55px;
+  }
+}
+
 html > body > header > nav.navigation > ul.site-list {
   .mp-reset();
   margin-left: auto;
@@ -37,13 +53,15 @@ html > body > header > nav.navigation > ul.site-list > li a {
   position: relative;
   padding-left: 30px;
   color: @basic-black;
+  font-size: 1.313em;
+  line-height: 1.119;
   text-decoration: none;
 
   &::before {
     content: "";
     position: absolute;
     left: 0;
-    top: -4px;
+    top: -2px;
     width: 24px;
     height: 24px;
   }

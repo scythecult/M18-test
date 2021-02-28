@@ -51,8 +51,29 @@ html > body > main > section.promo > div.content > div.info > div.learn-more {
   margin-bottom: 0;
 }
 
-html > body > main > section.promo > div.content > div.info > div.learn-more > a.button {
+html
+  > body
+  > main
+  > section.promo
+  > div.content
+  > div.info
+  > div.learn-more
+  > a.button {
   width: 260px;
+  font-size: 1em;
+  line-height: 1.125;
+}
+
+html
+  > body
+  > main
+  > section.promo
+  > div.content
+  > div.info
+  > div.learn-more
+  > span {
+  font-size: 1em;
+  line-height: 1.5;
 }
 
 html > body > main > section.promo > a.scroll-button {
@@ -65,6 +86,7 @@ html > body > main > section.promo > a.scroll-button {
   color: @page-red;
   font-size: 1em;
   line-height: 1.125;
+  letter-spacing: -0.01px;
   text-decoration: none;
 
   &::before {
@@ -96,10 +118,62 @@ html > body > main > section.promo > a.scroll-button {
   }
 }
 
-html > body > main > section.promo > video.promo-video {
+html > body > main > section.promo > div.promo-video {
+  position: relative;
   width: 50%;
-  outline: 5px solid tomato;
-  outline-offset: -5px;
+}
+
+html > body > main > section.promo > div.promo-video > video {
+  width: 100%;
+}
+
+html > body > main > section.promo > div.promo-video > div.video-controls {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: 101;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  min-height: 299px;
+  transform: translate(50%, -50%);
+}
+
+html
+  > body
+  > main
+  > section.promo
+  > div.promo-video
+  > div.video-controls
+  > button {
+  width: 250px;
+  height: 250px;
+  .mp-reset();
+  margin-bottom: 19px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/icon-video-play.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+html
+  > body
+  > main
+  > section.promo
+  > div.promo-video
+  > div.video-controls
+  > span {
+  color: @page-red;
+  font-size: 1.313em;
+  line-height: 1.148;
 }
 
 @keyframes scrollDown {
