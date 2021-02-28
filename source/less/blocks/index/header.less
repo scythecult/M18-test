@@ -37,10 +37,24 @@ html > body > header > nav.navigation {
 html > body > header > nav.navigation > a.logo {
   display: block;
 
+  @media (min-width: @tablet-width) {
+    width: 140px;
+    height: 38px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 170px;
+    height: 45px;
+  }
+
   @media (min-width: 1440px) {
     width: 200px;
     height: 55px;
   }
+}
+
+html > body > header > nav.navigation > a.logo > img {
+  width: 100%;
 }
 
 html > body > header > nav.navigation > ul.site-list {
@@ -53,17 +67,15 @@ html > body > header > nav.navigation > ul.site-list > li a {
   position: relative;
   padding-left: 30px;
   color: @basic-black;
-  font-size: 1.313em;
-  line-height: 1.119;
   text-decoration: none;
 
   &::before {
     content: "";
     position: absolute;
     left: 0;
-    top: -2px;
-    width: 24px;
-    height: 24px;
+    top: -1px;
+    width: 20px;
+    height: 20px;
   }
 
   &:hover {
@@ -73,13 +85,24 @@ html > body > header > nav.navigation > ul.site-list > li a {
   &:active {
     opacity: 0.3;
   }
+
+  @media (min-width: 1440px) {
+    font-size: 1.313em;
+    line-height: 1.119;
+
+    &::before {
+      width: 24px;
+      height: 24px;
+      top: -2px;
+    }
+  }
 }
 
 html > body > header > nav.navigation > ul.site-list > li a.contacts {
   &::before {
     background-image: url("../img/icon-phone.svg");
     background-repeat: no-repeat;
-    background-size: 24px 24px;
+    background-size: 100%;
     background-position: center;
   }
 
