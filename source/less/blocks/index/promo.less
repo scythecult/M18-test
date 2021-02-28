@@ -1,0 +1,117 @@
+// promo
+
+html > body > main > section.promo {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+html > body > main > section.promo > div.content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+html > body > main > section.promo > div.content > div.info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 600px;
+  padding-left: 86px;
+}
+
+html > body > main > section.promo > div.content > div.info > h1 {
+  @media (min-width: 1440px) {
+    margin-bottom: 27px;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+}
+
+html > body > main > section.promo > div.content > div.info > p {
+  width: 456px;
+  margin-bottom: 64px;
+  font-size: 1.313em;
+  line-height: 1.42;
+  letter-spacing: -0.01px;
+}
+
+html > body > main > section.promo > div.content > div.info > div.learn-more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 434px;
+  margin-bottom: 0;
+}
+
+html > body > main > section.promo > div.content > div.info > div.learn-more > a.button {
+  width: 260px;
+}
+
+html > body > main > section.promo > a.scroll-button {
+  position: absolute;
+  z-index: 101;
+  left: 115px;
+  bottom: 51px;
+  width: 250px;
+  padding-left: 53px;
+  color: @page-red;
+  font-size: 1em;
+  line-height: 1.125;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 41px;
+    height: 30px;
+    background-image: url("../img/icon-scroll-arrows.svg");
+    background-repeat: no-repeat;
+    background-size: 41px 30px;
+    background-position: center;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:hover::before {
+    animation-name: scrollDown;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+html > body > main > section.promo > video.promo-video {
+  width: 50%;
+  outline: 5px solid tomato;
+  outline-offset: -5px;
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

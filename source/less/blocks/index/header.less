@@ -1,10 +1,24 @@
 // header
 
+html > body {
+  position: relative;
+}
+
 html > body > header {
   position: absolute;
+  z-index: 101;
   width: 100%;
+  padding-top: 10px;
   padding-right: 20px;
+  padding-bottom: 10px;
   padding-left: 20px;
+
+  @media (min-width: @desktop-width) {
+    padding-top: 48px;
+    padding-right: 89px;
+    padding-bottom: 48px;
+    padding-left: 110px;
+  }
 }
 
 html > body > header > nav.navigation {
@@ -13,24 +27,62 @@ html > body > header > nav.navigation {
   align-items: center;
 }
 
-html > body > header > nav.navigation > ul.menu-list {
+html > body > header > nav.navigation > ul.site-list {
   .mp-reset();
   margin-left: auto;
   list-style: none;
 }
 
-html > body > main > section.promo {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  min-height: 100vh;
+html > body > header > nav.navigation > ul.site-list > li a {
+  position: relative;
+  padding-left: 30px;
+  color: @basic-black;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -4px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
-html > body > main > section > div.content {
-  width: 50%;
+html > body > header > nav.navigation > ul.site-list > li a.contacts {
+  &::before {
+    background-image: url("../img/icon-phone.svg");
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center;
+  }
+
+  &:hover::before {
+    animation-name: callUs;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
 }
 
-html > body > main > section > video.promo-video {
-  width: 50%;
-  background-color: violet;
+@keyframes callUs {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
 }
