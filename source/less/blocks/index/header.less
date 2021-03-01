@@ -38,35 +38,8 @@ html > body > header {
 }
 
 html > body > header > nav.navigation {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
   overflow: hidden;
-}
-
-html > body > header > nav.navigation > a.logo {
-  display: block;
-
-  @media (min-width: @tablet-width) {
-    width: 140px;
-    height: 38px;
-  }
-
-  @media (min-width: 1200px) {
-    width: 170px;
-    height: 45px;
-  }
-
-  @media (min-width: 1440px) {
-    width: 200px;
-    height: 55px;
-  }
-}
-
-html > body > header > nav.navigation > a.logo > img {
-  width: 100%;
 }
 
 html > body > header > nav.navigation > button.burger {
@@ -79,14 +52,7 @@ html > body > header > nav.navigation > ul.site-list {
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
-  .mp-reset();
-  padding-top: 10px;
-  padding-bottom: 10px;
   list-style: none;
   opacity: 0;
   transform: translateY(-100%);
@@ -106,7 +72,7 @@ html > body > header > nav.navigation > ul.site-list {
   }
 }
 
-// * menu state
+// * menu states
 
 html > body > header > nav.navigation.menu-active ul.site-list {
   position: static;
@@ -127,19 +93,7 @@ html > body > header > nav.navigation.menu-active > button.burger > svg > use.bu
 }
 
 html > body > header > nav.navigation > ul.site-list > li {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  min-height: 54px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid @page-grey;
-
-  &:first-child {
-    border-top: 1px solid @page-grey;
-  }
 
   @media (min-width: @tablet-width) {
     margin-right: 12px;
@@ -147,41 +101,6 @@ html > body > header > nav.navigation > ul.site-list > li {
 
     &:last-child {
       margin-right: 0;
-    }
-  }
-}
-
-html > body > header > nav.navigation > ul.site-list > li a {
-  position: relative;
-  padding-left: 30px;
-  color: @basic-black;
-  text-decoration: none;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -1px;
-    width: 20px;
-    height: 20px;
-  }
-
-  &:hover {
-    opacity: 0.6;
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
-
-  @media (min-width: 1440px) {
-    font-size: 1.313em;
-    line-height: 1.119;
-
-    &::before {
-      width: 24px;
-      height: 24px;
-      top: -2px;
     }
   }
 }
@@ -199,19 +118,5 @@ html > body > header > nav.navigation > ul.site-list > li a.contacts {
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-  }
-}
-
-@keyframes callUs {
-  0% {
-    transform: rotate(0);
-  }
-
-  50% {
-    transform: rotate(15deg);
-  }
-
-  100% {
-    transform: rotate(0);
   }
 }
