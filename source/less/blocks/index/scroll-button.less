@@ -1,0 +1,58 @@
+// scroll-button
+
+.scroll-button {
+  min-width: 180px;
+  padding-left: 33px;
+  color: @page-red;
+  font-size: 0.875em;
+  line-height: 1.125;
+  letter-spacing: -0.01px;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background-image: url("../img/icon-scroll-arrows.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:hover::before {
+    animation-name: scrollDown;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @media (min-width: @tablet-width) {
+    padding-left: 53px;
+    font-size: 1em;
+
+    &::before {
+      top: 5px;
+      width: 30px;
+      height: 25px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    &::before {
+      top: 0;
+      width: 41px;
+      height: 30px;
+    }
+  }
+}

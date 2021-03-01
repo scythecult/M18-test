@@ -1,0 +1,42 @@
+// site-fx
+
+.site-fx {
+  display: block;
+  transition-property: transform, box-shadow, opacity, background-color;
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+// * animations
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes callUs {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}

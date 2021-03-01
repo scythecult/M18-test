@@ -16,28 +16,54 @@
       <a class="logo">
         <img src="img/page-logotype.svg" width="200" height="55" alt="Логотип Fix Ремонт">
       </a>
-      <ul class="menu-list">
+      <button class="burger" type="button">
+        <svg width='23' height='23' aria-hidden='true' focusable='false'>
+          <use class="burger-menu" href='img/icons/sprite.svg#icon-burger-menu'></use>
+          <use class="burger-cross" href='img/icons/sprite.svg#icon-cross-menu'></use>
+        </svg>
+      </button>
+      <ul class="site-list">
         <li>
-          <a href="#">Контакты</a>
+          <a class="contacts site-fx" href="#">Контакты</a>
         </li>
       </ul>
     </nav>
   </header>
+  <script>
+    "use strict";
+    const menu = document.querySelector('.navigation');
+    const burger = document.querySelector('.burger');
+
+    burger.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      menu.classList.toggle('menu-active');
+    })
+  </script>
   <main>
     <section class="promo">
       <div class="content">
-        <h2>Ремонт квартир в типовых домах</h2>
-        <p>Готовый дизайн-проект, работы и материалы за 3 месяца от 610 т.р.</p>
-        <p class="learn-more">
-          <a href="#">Узнайте о запуске первым</a>
-          <span>Старт весной 2016</span>
-        </p>
-        <a class="scroll-button" href="#">Листайте вниз,
-          чтобы ничего не упустить</a>
+        <div class="info">
+          <h1>Ремонт квартир в типовых домах</h1>
+          <p>Готовый дизайн-проект, работы и материалы за 3 месяца от 610 т.р.</p>
+          <div class="learn-more">
+            <a class="button site-fx" href="#">Узнайте о запуске первым</a>
+            <span>Старт весной 2016</span>
+          </div>
+        </div>
       </div>
-      <video class="promo-video" src="#"></video>
-    </section>
+      <a class="scroll-button site-fx" href="#">Листайте вниз,
+        чтобы ничего не упустить</a>
+      <div class="promo-video">
+        <video muted src="#" poster="img/video-poster.jpg">
+        </video>
+        <div class="video-controls">
+          <button class="site-fx" type="button" aria-label="Кнопка управления видеоплеером"></button>
+          <span>Смотерть видео</span>
+        </div>
 
+      </div>
+
+    </section>
   </main>
 </body>
 
