@@ -16,6 +16,12 @@
       <a class="logo">
         <img src="img/page-logotype.svg" width="200" height="55" alt="Логотип Fix Ремонт">
       </a>
+      <button class="burger" type="button">
+        <svg width='23' height='23' aria-hidden='true' focusable='false'>
+          <use class="burger-menu" href='img/icons/sprite.svg#icon-burger-menu'></use>
+          <use class="burger-cross" href='img/icons/sprite.svg#icon-cross-menu'></use>
+        </svg>
+      </button>
       <ul class="site-list">
         <li>
           <a class="contacts site-fx" href="#">Контакты</a>
@@ -23,6 +29,16 @@
       </ul>
     </nav>
   </header>
+  <script>
+    "use strict";
+    const menu = document.querySelector('.navigation');
+    const burger = document.querySelector('.burger');
+
+    burger.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      menu.classList.toggle('menu-active');
+    })
+  </script>
   <main>
     <section class="promo">
       <div class="content">
@@ -36,7 +52,7 @@
         </div>
       </div>
       <a class="scroll-button site-fx" href="#">Листайте вниз,
-        чтобы ничего не упустить</a>
+              чтобы ничего не упустить</a>
       <div class="promo-video">
         <video muted src="#" poster="img/video-poster.jpg">
         </video>

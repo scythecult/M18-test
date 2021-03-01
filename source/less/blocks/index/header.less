@@ -5,13 +5,22 @@ html > body {
 }
 
 html > body > header {
-  position: absolute;
-  z-index: 101;
-  width: 100%;
-  padding-top: 10px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+
+  @media (min-width: @tablet-width) {
+    position: absolute;
+    z-index: 101;
+    width: 100%;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+  }
 
   @media (min-width: 1200px) {
     padding-top: 24px;
@@ -32,6 +41,9 @@ html > body > header > nav.navigation {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
 }
 
 html > body > header > nav.navigation > a.logo {
@@ -57,10 +69,86 @@ html > body > header > nav.navigation > a.logo > img {
   width: 100%;
 }
 
+html > body > header > nav.navigation > button.burger {
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
+}
+
 html > body > header > nav.navigation > ul.site-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   .mp-reset();
-  margin-left: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
   list-style: none;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+
+  @media (min-width: @tablet-width) {
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    margin-left: auto;
+    padding: 0;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// * menu state
+
+html > body > header > nav.navigation.menu-active ul.site-list {
+  position: static;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html > body > header > nav.navigation > button.burger > svg > use.burger-cross {
+  display: none;
+}
+
+html > body > header > nav.navigation.menu-active > button.burger > svg > use.burger-cross {
+  display: block;
+}
+
+html > body > header > nav.navigation.menu-active > button.burger > svg > use.burger-menu {
+  display: none;
+}
+
+html > body > header > nav.navigation > ul.site-list > li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 54px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid @page-grey;
+
+  &:first-child {
+    border-top: 1px solid @page-grey;
+  }
+
+  @media (min-width: @tablet-width) {
+    margin-right: 12px;
+    padding: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 html > body > header > nav.navigation > ul.site-list > li a {
