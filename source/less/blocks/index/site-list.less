@@ -58,4 +58,17 @@
       }
     }
   }
+
+  @media (min-width: @tablet-width) {
+    flex-direction: row;
+    align-items: flex-start;
+
+    li {
+      border-bottom: none;
+
+      &:first-child {
+        border-top: none;
+      }
+    }
+  }
 }
