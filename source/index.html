@@ -16,13 +16,13 @@
       <a class="logo">
         <img src="img/page-logotype.svg" width="200" height="55" alt="Логотип Fix Ремонт">
       </a>
-      <button class="burger" type="button">
+      <button class="burger" type="button" aria-controls="site-list">
         <svg width='23' height='23' aria-hidden='true' focusable='false'>
           <use class="burger-menu" href='img/icons/sprite.svg#icon-burger-menu'></use>
           <use class="burger-cross" href='img/icons/sprite.svg#icon-cross-menu'></use>
         </svg>
       </button>
-      <ul class="site-list">
+      <ul class="site-list" id="site-list">
         <li>
           <a class="contacts site-fx" href="#">Контакты</a>
         </li>
@@ -36,7 +36,7 @@
 
     burger.addEventListener('click', (evt) => {
       evt.preventDefault();
-      menu.classList.toggle('menu-active');
+      menu.classList.toggle('active');
     })
   </script>
   <main>
@@ -57,7 +57,7 @@
         <video muted src="#" poster="img/video-poster.jpg">
         </video>
         <div class="video-controls">
-          <button class="site-fx" type="button" aria-label="Кнопка управления видеоплеером"></button>
+          <button class="play-button site-fx" type="button" aria-label="Кнопка управления видеоплеером"></button>
           <span>Смотерть видео</span>
         </div>
       </div>
@@ -89,60 +89,73 @@
         </ul>
       </div>
     </section>
-    <section class="interier section-common">
+    <section class="interier">
       <h2 class="visually-hidden">Примеры интерьера</h2>
       <div class="container">
         <p class="slogan">
           <b>3 стиля интерьера</b>
           <span>Скандинавский, классический и эко-стиль</span>
         </p>
+        <!-- <ul class="buttons">
+                                                  <li><button class="slide-button-prev" type="button"><span class="visually-hidden">Предыдущий
+                                                        слайд</span></button></li>
+                                                  <li><button class="slide-button-next" type="button"><span class="visually-hidden">Следующий
+                                                        слайд</span></button></li>
+                                                </ul> -->
       </div>
       <div class="carousel">
         <ul class="carousel-list">
-          <li>
+          <li class="current">
             <a href="#">
               <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
             </a>
             <p>Кафельная плиткав ванной комнате
               в скандинавском стиле</p>
           </li>
-          <li>
+          <li class="prev next">
             <a href="#">
               <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
             </a>
             <p>Кафельная плиткав ванной комнате
               в скандинавском стиле</p>
           </li>
-          <li>
+          <li class="prev next">
             <a href="#">
               <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
             </a>
             <p>Кафельная плиткав ванной комнате
               в скандинавском стиле</p>
           </li>
-          <li>
-            <a href="#">
-              <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
-            </a>
-            <p>Кафельная плиткав ванной комнате
-              в скандинавском стиле</p>
-          </li>
-          <li>
-            <a href="#">
-              <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
-            </a>
-            <p>Кафельная плиткав ванной комнате
-              в скандинавском стиле</p>
-          </li>
-        </ul>
-        <ul class="buttons">
-          <li><button class="slide-button-prev" type="button"><span class="visually-hidden">Предыдущий
-                слайд</span></button></li>
-          <li><button class="slide-button slide-button-next" type="button"><span class="visually-hidden">Следующий
-                слайд</span></button></li>
         </ul>
       </div>
     </section>
+    <script>
+      "use strict";
+
+      const carouselContainer = document.querySelector('.carousel');
+      const carousel = carouselContainer.querySelector('.carousel-list');
+      const CarouselMap = {
+        slideWidth: carousel.querySelector('.carousel-list li').offsetWidth,
+        slideCount: carousel.children.length,
+      }
+
+      carouselContainer.addEventListener('click', evt => {
+        let Buttons = {
+          prev: evt.target.closest('.slide-button-prev'),
+          next: evt.target.closest('.slide-button-next'),
+        }
+
+        if (!Buttons.prev && !Buttons.next) return;
+
+        if (Buttons.prev) {
+          console.log(CarouselMap.slideWidth, CarouselMap.slideCount);
+
+        }
+
+        if (Buttons.next) {
+        }
+      });
+    </script>
   </main>
 </body>
 

@@ -4,7 +4,7 @@
   position: absolute;
   z-index: 101;
   left: 50%;
-  top: 80px;
+  bottom: -120px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -42,15 +42,23 @@
   }
 
   @media (min-width: @tablet-width) {
-    top: auto;
-    bottom: 0;
-    left: 56.6%;
     width: 73px;
-    transform: translateX(0);
+    left: auto;
+    right: -140px;
+    bottom: -385px;
 
     button {
       width: 20px;
       min-height: 43px;
     }
+  }
+
+  @media (min-width: @desktop-width) {
+    right: -160px;
+    bottom: -480px;
+  }
+
+  @media (min-width: @desktop-ultra-w) {
+    right: 60px;
   }
 }

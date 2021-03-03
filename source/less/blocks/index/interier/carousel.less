@@ -2,66 +2,83 @@
 
 .carousel {
   position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: violet;
 }
 
 .carousel-list {
-  display: flex;
-  .mp-reset();
-  list-style: none;
-
-  li {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 300px;
-    margin-right: 20px;
-
-    a {
-      width: 300px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      padding-left: 20px;
-      font-size: 0.75em;
-      line-height: 1.53;
-    }
-  }
-
-  @media (min-width: @tablet-width) {
-    li {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      flex-direction: row;
-      width: 720px;
-      margin-right: 50px;
-
-      a {
-        width: 580px;
-        margin-bottom: 0;
-      }
-
-      p {
-        width: 130px;
-        padding-left: 0;
-      }
-    }
-  }
-
-  @media (min-width: @desktop-width) {
-    li {
-      width: 912px;
-      margin-right: 71px;
-
-      a {
-        width: 720px;
-      }
-
-      p {
-        width: 160px;
-        font-size: 0.813em;
-      }
-    }
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
 }
+
+// .carousel-list {
+//   // display: flex;
+//   .mp-reset();
+//   list-style: none;
+
+//   li {
+//     display: flex;
+//     flex-wrap: wrap;
+//     flex-direction: column;
+//     width: 300px;
+//     margin-right: 20px;
+
+//     a {
+//       width: 300px;
+//       margin-bottom: 20px;
+//     }
+
+//     p {
+//       padding-left: 20px;
+//       font-size: 0.75em;
+//       line-height: 1.53;
+//     }
+//   }
+
+//   @media (min-width: @tablet-width) {
+//     li {
+//       display: flex;
+//       flex-wrap: wrap;
+//       justify-content: space-between;
+//       flex-direction: row;
+//       width: 720px;
+//       margin-right: 50px;
+
+//       a {
+//         width: 580px;
+//         margin-bottom: 0;
+//       }
+
+//       p {
+//         width: 130px;
+//         padding-left: 0;
+//       }
+//     }
+//   }
+
+//   @media (min-width: @desktop-width) {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+
+//     li {
+//       position: absolute;
+//       left: calc(50% - 912px / 2);
+//       top: 0;
+//       width: 912px;
+//       margin-right: 0;
+//       // margin-right: 71px;
+
+//       a {
+//         width: 720px;
+//       }
+
+//       p {
+//         width: 160px;
+//         font-size: 0.813em;
+//       }
+//     }
+//   }
+// }
