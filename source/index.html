@@ -89,6 +89,75 @@
         </ul>
       </div>
     </section>
+    <section class="interier">
+      <h2 class="visually-hidden">Примеры интерьера</h2>
+      <div class="container">
+        <p class="slogan">
+          <b>3 стиля интерьера</b>
+          <span>Скандинавский, классический и эко-стиль</span>
+        </p>
+
+        <div class="carousel">
+          <ul class="carousel-list">
+            <li class="slide current">
+              <a href="#">
+                <img src="img/carousel-img-0.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>1 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+            <li class="slide">
+              <a href="#">
+                <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>2 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+            <li class="slide">
+              <a href="#">
+                <img src="img/carousel-img-2.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>3 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+            <li class="slide">
+              <a href="#">
+                <img src="img/carousel-img-3.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>4 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+            <li class="slide">
+              <a href="#">
+                <img src="img/carousel-img-4.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>5 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+            <li class="slide">
+              <a href="#">
+                <img src="img/carousel-img-5.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>6 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+            <li class="slide">
+              <a href="#">
+                <img src="img/carousel-img-6.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>7 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+          </ul>
+          <ul class="buttons">
+            <li><button class="slide-button-prev" type="button"><span class="visually-hidden">Предыдущий
+                  слайд</span></button></li>
+            <li><button class="slide-button-next" type="button"><span class="visually-hidden">Следующий
+                  слайд</span></button></li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <section class="subscribe section-common">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <div class="container">
@@ -120,58 +189,75 @@
         </form>
       </div>
     </section>
-    <!-- <section class="interier">
-      <h2 class="visually-hidden">Примеры интерьера</h2>
-      <div class="container">
-        <p class="slogan">
-          <b>3 стиля интерьера</b>
-          <span>Скандинавский, классический и эко-стиль</span>
-        </p>
-        <ul class="buttons">
-          <li><button class="slide-button-prev" type="button"><span class="visually-hidden">Предыдущий
-                слайд</span></button></li>
-          <li><button class="slide-button-next" type="button"><span class="visually-hidden">Следующий
-                слайд</span></button></li>
-        </ul>
-      </div>
-      <div class="carousel">
-        <ul class="carousel-list">
-          <li class="current">
-            <a href="#">
-              <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
-            </a>
-            <p>Кафельная плиткав ванной комнате
-              в скандинавском стиле</p>
-          </li>
-          <li class="prev next">
-            <a href="#">
-              <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
-            </a>
-            <p>Кафельная плиткав ванной комнате
-              в скандинавском стиле</p>
-          </li>
-          <li class="prev next">
-            <a href="#">
-              <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
-            </a>
-            <p>Кафельная плиткав ванной комнате
-              в скандинавском стиле</p>
-          </li>
-        </ul>
-      </div>
-    </section> -->
-    <!-- <script>
+
+    <script>
       "use strict";
 
       const carouselContainer = document.querySelector('.carousel');
       const carousel = carouselContainer.querySelector('.carousel-list');
-      const CarouselMap = {
-        slideWidth: carousel.querySelector('.carousel-list li').offsetWidth,
-        slideCount: carousel.children.length,
-      }
+      const carouselElements = carousel.children;
+      const States = {
+        current: 'current',
+        prev: 'prev',
+        next: 'next'
+      };
+      const makeCounter = () => {
+        let count = 0;
+        const counter = () => {
+          return count;
+        }
 
-      carouselContainer.addEventListener('click', evt => {
-        let Buttons = {
+        counter.inc = () => ++count;
+        counter.dec = () => --count;
+        counter.set = (value) => count = value;
+        return counter;
+      }
+      const counter = makeCounter();
+      const increaser = makeCounter();
+      const clearClassName = (name, elements = carouselElements) => {
+        for (const elem of elements) {
+          if (elem.classList.contains(name)) {
+            elem.classList.remove(name)
+          }
+        }
+      };
+      const getCurrentValue = (state, elements) => {
+        let current;
+        for (const elem of elements) {
+          if (elem.classList.contains(state)) {
+            current = elem;
+          }
+        }
+        return Array.from(elements).indexOf(current);
+      };
+
+      const currentValue = getCurrentValue(States.current, carouselElements);
+      counter.set(currentValue);
+
+      const getNextSlide = (name) => {
+        increaser.set(counter() - 1);
+        if (counter() >= carouselElements.length - 1) {
+          carouselElements[counter.set(currentValue)].classList.add(name);
+          carouselElements[increaser.set(carouselElements.length - 1)].classList.add(States.prev);
+        } else {
+          carouselElements[counter.inc()].classList.add(name);
+          carouselElements[increaser.inc()].classList.add(States.prev);
+        }
+      };
+
+      const getPrevSlide = (name) => {
+        increaser.set(counter() + 1);
+        if (counter() <= currentValue) {
+          carouselElements[counter.set(carouselElements.length - 1)].classList.add(name);
+          carouselElements[increaser.set(currentValue)].classList.add(States.next);
+        } else {
+          carouselElements[increaser.dec()].classList.add(States.next);
+          carouselElements[counter.dec()].classList.add(name);
+        }
+
+      };
+      const onButtonsClick = (evt) => {
+        const Buttons = {
           prev: evt.target.closest('.slide-button-prev'),
           next: evt.target.closest('.slide-button-next'),
         }
@@ -179,14 +265,21 @@
         if (!Buttons.prev && !Buttons.next) return;
 
         if (Buttons.prev) {
-          console.log(CarouselMap.slideWidth, CarouselMap.slideCount);
-
+          clearClassName(States.next);
+          clearClassName(States.prev);
+          clearClassName(States.current);
+          getPrevSlide(States.current);
         }
 
         if (Buttons.next) {
+          clearClassName(States.next);
+          clearClassName(States.prev);
+          clearClassName(States.current);
+          getNextSlide(States.current);
         }
-      });
-    </script> -->
+      }
+      carouselContainer.addEventListener('click', onButtonsClick);
+    </script>
   </main>
   <footer class="footer section-common">
     <div class="container">
