@@ -1,5 +1,60 @@
 // interier
 
-section.interier > div.container > p.slogan {
+html > body > main > section.interier > div.container > p.slogan {
   margin-bottom: 52px;
+}
+
+html > body > main > section.interier > div.container > div.carousel {
+  width: 100%;
+  height: 100%;
+}
+
+html
+  > body
+  > main
+  > section.interier
+  > div.container
+  > div.carousel
+  > ul.buttons {
+  position: absolute;
+  z-index: 110;
+  bottom: 17px;
+  right: 0;
+  width: 50px;
+
+  @media (min-width: @tablet-width) {
+    z-index: 101;
+    top: auto;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    width: 73px;
+  }
+
+  @media (min-width: @desktop-width) {
+    right: 86px;
+  }
+
+  @media (min-width: @desktop-ultra-w) {
+    width: 73px;
+    right: 40px;
+  }
+}
+
+html
+  > body
+  > main
+  > section.interier
+  > div.container
+  > div.carousel
+  > ul.buttons
+  > li
+  > button {
+  width: 20px;
+  min-height: 20px;
+
+  @media (min-width: @tablet-width) {
+    width: 25px;
+    min-height: 43px;
+  }
 }

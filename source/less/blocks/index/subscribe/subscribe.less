@@ -8,6 +8,7 @@
   legend {
     font-size: 22px;
     line-height: 1.25;
+    text-align: center;
     font-weight: 500;
     letter-spacing: -0.2px;
 
@@ -58,7 +59,7 @@
 .feedback-holder > p {
   position: relative;
   margin-bottom: 45px;
-  padding-left: 30px;
+  padding-left: 45px;
   font-size: 12px;
   line-height: 1.5;
   font-weight: 400;
@@ -179,6 +180,11 @@
   }
 }
 
-.feedback-requred > span {
+.feedback-requred > a {
   color: @page-red;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

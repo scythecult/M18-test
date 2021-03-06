@@ -46,7 +46,7 @@ html > body > main > section.promo > div.content {
     transform: translateY(-80%);
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: @desktop-width) {
     position: static;
     top: auto;
     left: auto;
@@ -72,12 +72,12 @@ html > body > main > section.promo > div.content > div.info {
     width: 50%;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: @desktop-width) {
     width: 85%;
     padding-left: 80px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: @desktop-ultra-w) {
     width: 600px;
     padding-left: 86px;
   }
@@ -92,32 +92,32 @@ html > body > main > section.promo > div.content > div.info > h1 {
   @media (min-width: @tablet-width) {
     text-align: left;
     margin-bottom: 18px;
-    font-size: 2.6em;
+    font-size: 41px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: @desktop-ultra-w) {
     margin-bottom: 27px;
-    font-size: 4em;
+    font-size: 64px;
   }
 }
 
 html > body > main > section.promo > div.content > div.info > p {
   margin-bottom: 27px;
-  font-size: 0.875em;
+  font-size: 14px;
   text-align: center;
   line-height: 1.42;
   letter-spacing: -0.01px;
 
   @media (min-width: @tablet-width) {
     margin-bottom: 48px;
+    font-size: 16px;
     text-align: left;
-    font-size: 1em;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: @desktop-ultra-w) {
     width: 456px;
     margin-bottom: 64px;
-    font-size: 1.313em;
+    font-size: 21px;
   }
 }
 
@@ -133,12 +133,12 @@ html > body > main > section.promo > div.content > div.info > div.learn-more {
     align-self: stretch;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: @desktop-width) {
     align-items: flex-start;
     align-self: flex-start;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: @desktop-ultra-w) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -147,32 +147,46 @@ html > body > main > section.promo > div.content > div.info > div.learn-more {
   }
 }
 
-html > body > main > section.promo > div.content > div.info > div.learn-more > a.button {
-  font-size: 0.875em;
-  line-height: 1.125;
+html
+  > body
+  > main
+  > section.promo
+  > div.content
+  > div.info
+  > div.learn-more
+  > a.button {
   margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.125;
 
   @media (min-width: @tablet-width) {
-    font-size: 1em;
     margin-bottom: 32px;
+    font-size: 16px;
   }
 
   @media (min-width: @desktop-width) {
     margin-bottom: 16px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: @desktop-ultra-w) {
     width: 260px;
     margin-bottom: 0;
   }
 }
 
-html > body > main > section.promo > div.content > div.info > div.learn-more > span {
-  font-size: 0.875em;
+html
+  > body
+  > main
+  > section.promo
+  > div.content
+  > div.info
+  > div.learn-more
+  > span {
+  font-size: 14px;
   line-height: 1.5;
 
   @media (min-width: @tablet-width) {
-    font-size: 1em;
+    font-size: 16px;
   }
 }
 
@@ -187,12 +201,12 @@ html > body > main > section.promo > a.scroll-button {
     width: 250px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: @desktop-width) {
     margin-top: -50px;
     margin-left: 80px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: @desktop-ultra-w) {
     margin-top: -70px;
     margin-left: 86px;
   }
@@ -211,12 +225,12 @@ html > body > main > section.promo > div.promo-video {
     margin-bottom: 30px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: @desktop-width) {
     width: 60%;
     margin-bottom: 0;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: @desktop-ultra-w) {
     width: 50%;
   }
 }

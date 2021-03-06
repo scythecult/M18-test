@@ -1,0 +1,109 @@
+// modal
+
+.modal {
+  position: fixed;
+  z-index: 100500;
+  top: 150px;
+  left: 50%;
+  display: none;
+  width: 90%;
+  padding-top: 40px;
+  background-color: @basic-white;
+  transform: translateX(-50%);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+
+  @media (min-width: @tablet-width) {
+    width: 80%;
+    min-height: 400px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 976px;
+    min-height: 639px;
+  }
+}
+
+section.modal > div.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  border: 2px solid @page-turq;
+  border-radius: 5px;
+
+  @media (min-width: @tablet-width) {
+    min-height: 400px;
+  }
+
+  @media (min-width: @desktop-width) {
+    min-height: 639px;
+  }
+}
+
+section.modal > div.modal-content > h2 {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  width: 90%;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  text-align: center;
+  background-color: @basic-white;
+  transform: translateX(-50%);
+
+  @media (min-width: @tablet-width) {
+    top: 22px;
+    width: 90%;
+    font-size: 32px;
+  }
+
+  @media (min-width: @desktop-width) {
+    top: 15px;
+    width: 680px;
+    font-size: 40px;
+  }
+}
+
+section.modal > div.modal-content > p {
+  position: relative;
+  width: 285px;
+  padding-top: 120px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.65px;
+  text-transform: uppercase;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: 80px;
+    background-image: url("../img/icon-success-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    transform: translateX(-50%);
+  }
+
+  @media (min-width: @tablet-width) {
+    padding-top: 169px;
+    font-size: 16px;
+
+    &::before {
+      width: 195px;
+      height: 140px;
+    }
+  }
+}
+
+// * states
+.modal-show {
+  display: block;
+}
