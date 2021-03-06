@@ -7,13 +7,13 @@
 }
 
 .carousel-list {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   min-height: 500px;
   .mp-reset();
   list-style: none;
-  overflow: hidden;
 
   li {
     position: absolute;
@@ -23,9 +23,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 912px;
+    width: 100%;
+    max-height: 540px;
     background-color: @basic-white;
     opacity: 0;
+    overflow-x: hidden;
     visibility: hidden;
     transform: translateX(-10%);
     transition-property: transform, opacity, visibility, z-index;
@@ -43,24 +45,63 @@
     }
 
     p {
-      width: 144px;
       font-size: 13px;
       line-height: 1.53;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    a {
+      img {
+        margin-bottom: 20px;
+      }
+    }
+
+    p {
+      width: 80%;
+      padding-right: 120px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    a {
+      img {
+        margin-bottom: 0;
+      }
+    }
+
+    p {
+      width: 20%;
+      padding-right: 0;
+      padding-bottom: 50px;
+    }
+  }
+
+  @media (min-width: @desktop-ultra-w) {
+    li {
+      width: 912px;
+    }
+
+    p {
+      width: 144px;
     }
   }
 }
 
 li.current {
   z-index: 101;
+  position: static;
   visibility: visible;
   opacity: 1;
   transform: translateX(0) scale(1);
 }
 
 li.prev {
+  position: absolute;
   transform: translateX(calc(-100% - 70px)) scale(0.6);
 }
 
 li.next {
+  position: absolute;
   transform: translateX(calc(100% + 70px)) scale(0.6);
 }
