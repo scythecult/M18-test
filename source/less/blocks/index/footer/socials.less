@@ -1,0 +1,28 @@
+// socials
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .mp-reset();
+  list-style: none;
+
+  a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 51px;
+    height: 51px;
+    background-color: @page-red;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}

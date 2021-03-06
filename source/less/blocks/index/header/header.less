@@ -1,9 +1,5 @@
 // header
 
-html > body {
-  position: relative;
-}
-
 html > body > header {
   display: flex;
   flex-wrap: wrap;
@@ -72,26 +68,6 @@ html > body > header > nav.navigation > ul.site-list {
   }
 }
 
-// * menu states
-
-html > body > header > nav.navigation.menu-active ul.site-list {
-  position: static;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-html > body > header > nav.navigation > button.burger > svg > use.burger-cross {
-  display: none;
-}
-
-html > body > header > nav.navigation.menu-active > button.burger > svg > use.burger-cross {
-  display: block;
-}
-
-html > body > header > nav.navigation.menu-active > button.burger > svg > use.burger-menu {
-  display: none;
-}
-
 html > body > header > nav.navigation > ul.site-list > li {
   width: 100%;
 
@@ -120,4 +96,24 @@ html > body > header > nav.navigation > ul.site-list > li a.contacts {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
+}
+
+// * menu states
+
+html > body > header > nav.navigation.active ul.site-list {
+  position: static;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html > body > header > nav.navigation > button.burger > svg > use.burger-cross {
+  display: none;
+}
+
+html > body > header > nav.navigation.active > button.burger > svg > use.burger-cross {
+  display: block;
+}
+
+html > body > header > nav.navigation.active > button.burger > svg > use.burger-menu {
+  display: none;
 }

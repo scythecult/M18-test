@@ -2,18 +2,23 @@
 
 html > body > main > section.promo {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  min-height: 100vh;
-  padding-bottom: 60px;
+  min-height: 100%;
+  padding-top: 10px;
+  padding-bottom: 20px;
 
   @media (min-width: @tablet-width) {
-    min-height: 100vh;
-    padding-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 60px;
   }
 
   @media (min-width: @desktop-width) {
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    padding-bottom: 0;
   }
 }
 
@@ -31,20 +36,23 @@ html > body > main > section.promo > div.content {
 
   @media (min-width: @tablet-width) {
     position: absolute;
-    top: 0;
+    z-index: 22;
+    top: 50%;
     left: 0;
-    width: 100%;
-    min-height: 100vh;
     justify-content: center;
     align-items: flex-start;
     padding-top: 0;
     padding-bottom: 0;
+    transform: translateY(-80%);
   }
 
   @media (min-width: 1200px) {
     position: static;
+    top: auto;
+    left: auto;
     width: 40%;
     padding: 0;
+    transform: translateY(0);
   }
 
   @media (min-width: 1440px) {
@@ -52,9 +60,9 @@ html > body > main > section.promo > div.content {
   }
 }
 
+// info
+
 html > body > main > section.promo > div.content > div.info {
-  position: relative;
-  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -65,7 +73,7 @@ html > body > main > section.promo > div.content > div.info {
   }
 
   @media (min-width: 1200px) {
-    width: 80%;
+    width: 85%;
     padding-left: 80px;
   }
 
@@ -168,140 +176,47 @@ html > body > main > section.promo > div.content > div.info > div.learn-more > s
   }
 }
 
+// scroll button
+
 html > body > main > section.promo > a.scroll-button {
-  position: absolute;
-  z-index: 101;
-  bottom: 20px;
-  left: calc(50% - 180px / 2);
+  position: relative;
+  order: 1;
   width: 180px;
 
   @media (min-width: @tablet-width) {
-    left: 20px;
-    bottom: 100px;
     width: 250px;
   }
 
   @media (min-width: 1200px) {
-    left: 90px;
-    bottom: 40px;
-    transform: translateX(0);
+    margin-top: -50px;
+    margin-left: 80px;
   }
 
   @media (min-width: 1440px) {
-    left: 115px;
-    bottom: 51px;
+    margin-top: -70px;
+    margin-left: 86px;
   }
 }
 
+// video
+
 html > body > main > section.promo > div.promo-video {
   position: relative;
+  margin-bottom: 20px;
 
   @media (min-width: @tablet-width) {
-    // position: absolute;
     z-index: 1;
-    top: 0;
-    left: 0;
     display: block;
     width: 100%;
-    transform: translateY(-8.4%);
-    background-color: @page-grey;
+    margin-bottom: 30px;
   }
 
   @media (min-width: 1200px) {
-    position: relative;
     width: 60%;
-    transform: translateY(0);
+    margin-bottom: 0;
   }
 
   @media (min-width: 1440px) {
     width: 50%;
-  }
-}
-
-html > body > main > section.promo > div.promo-video > video {
-  width: 100%;
-  height: 100%;
-}
-
-html > body > main > section.promo > div.promo-video > div.video-controls {
-  position: absolute;
-  z-index: 0;
-  top: 50%;
-  left: 50%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  width: 100px;
-  min-height: 100px;
-  transform: translate(-50%, -50%);
-
-  @media (min-width: @tablet-width) {
-    position: absolute;
-    top: auto;
-    right: 30px;
-    bottom: 30px;
-    left: auto;
-    transform: translate(0, 0);
-  }
-
-  @media (min-width: @desktop-width) {
-    top: 50%;
-    right: 50%;
-    bottom: auto;
-    width: 180px;
-    min-height: 220px;
-    transform: translate(50%, -50%);
-  }
-
-  @media (min-width: 1440px) {
-    width: 250px;
-    min-height: 299px;
-  }
-}
-
-html > body > main > section.promo > div.promo-video > div.video-controls > button {
-  width: 100px;
-  height: 100px;
-  .mp-reset();
-  border: none;
-  background-color: transparent;
-  background-image: url("../img/icon-video-play.svg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.6;
-  }
-
-  @media (min-width: @tablet-width) {
-    margin-bottom: 0;
-  }
-
-  @media (min-width: @desktop-width) {
-    width: 180px;
-    height: 180px;
-    margin-bottom: 19px;
-  }
-
-  @media (min-width: 1440px) {
-    width: 250px;
-    height: 250px;
-  }
-}
-
-html > body > main > section.promo > div.promo-video > div.video-controls > span {
-  color: @page-red;
-  font-size: 1em;
-  line-height: 1.148;
-  display: none;
-
-  @media (min-width: @desktop-width) {
-    display: block;
-  }
-
-  @media (min-width: 1440px) {
-    font-size: 1.313em;
   }
 }

@@ -1,0 +1,44 @@
+// slogan
+
+.slogan {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  b {
+    font-size: 1.5em;
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+  }
+
+  span {
+    font-size: 0.75em;
+    line-height: 1.5;
+    color: @page-turq;
+    letter-spacing: -0.62px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: @tablet-width) {
+    b {
+      font-size: 2em;
+    }
+
+    span {
+      font-size: 1em;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    b {
+      font-size: 2.5em;
+    }
+
+    span {
+      font-size: 1em;
+      text-transform: uppercase;
+    }
+  }
+}

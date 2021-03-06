@@ -1,0 +1,64 @@
+// buttons
+
+.buttons {
+  position: absolute;
+  z-index: 101;
+  left: 50%;
+  bottom: -120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 250px;
+  .mp-reset();
+  list-style: none;
+  transform: translateX(-50%);
+
+  button {
+    width: 20px;
+    min-height: 43px;
+    .mp-reset();
+    border: none;
+    background-color: transparent;
+    background-image: url("../img/icon-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    cursor: pointer;
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  button.slide-button-next {
+    transform: rotate(-180deg);
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 73px;
+    left: auto;
+    right: -140px;
+    bottom: -385px;
+
+    button {
+      width: 20px;
+      min-height: 43px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    right: -160px;
+    bottom: -480px;
+  }
+
+  @media (min-width: @desktop-ultra-w) {
+    right: 60px;
+  }
+}
