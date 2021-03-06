@@ -152,25 +152,26 @@
     <section class="subscribe section-common" id="subscribe-form">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <div class="container">
-        <form class="form" action="#" method="post">
+        <form class="form" action="#" method="post" autocomplete="off">
           <fieldset class="feedback">
             <legend>Узнайте о запуске сервиса первым</legend>
             <div class="feedback-holder">
               <p>Первым 10 клиентам стальная входная дверь в подарок</p>
               <div class="feedback-inputs">
-                <input type="text" id="full-name-field" placeholder="Имя и фамилия*" required>
+                <input type="text" id="full-name-field" placeholder="Имя и фамилия*" minlength="2" maxlength="40"
+                  required>
                 <label for="full-name-field">Имя и фамилия*</label>
               </div>
               <div class="feedback-inputs">
-                <input type="email" id="email-field" placeholder="Е-mail адрес*" required>
+                <input type="email" id="email-field" placeholder="Е-mail адрес*" minlength="2" maxlength="40" required>
                 <label for="email-field">Е-mail адрес*</label>
               </div>
               <div class="feedback-inputs">
-                <input type="tel" id="phone-field" placeholder="Телефон" required>
+                <input type="tel" id="phone-field" placeholder="Телефон" minlength="2" maxlength="40" required>
                 <label for="phone-field">Телефон</label>
               </div>
               <div class="feedback-submit">
-                <button class="submit button site-fx">Подписаться</button>
+                <button class="submit button site-fx" type="submit">Подписаться</button>
                 <p class="feedback-requred">
                   * Обязательные для заполнения поля <a class="site-fx" href="#">Политика конфиденциальности</a>
                 </p>
@@ -180,6 +181,7 @@
         </form>
       </div>
     </section>
+
   </main>
   <footer class="footer section-common" id="footer-contacts">
     <div class="container">
@@ -229,6 +231,7 @@
   </template>
   <script src="js/menu-toggler.js"></script>
   <script src="js/carousel.js"></script>
+  <script src="js/form.js"></script>
 </body>
 
 </html>
