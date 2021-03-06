@@ -1,20 +1,14 @@
 // buttons
 
 .buttons {
-  position: absolute;
-  top: calc(50% - 43px);
-  left: -22px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: calc(100% + 45px);
   .mp-reset();
   list-style: none;
 
   button {
     z-index: 102;
-    width: 25px;
-    min-height: 43px;
     .mp-reset();
     border: none;
     background-color: transparent;
@@ -23,12 +17,12 @@
     background-size: cover;
     background-position: center;
     cursor: pointer;
-    transition-property: opacity;
+    transition-property: opacity, transform;
     transition-duration: 0.2s;
     transition-timing-function: linear;
 
     &:hover {
-      opacity: 0.6;
+      transform: translateX(-2px) scale(0.9);
     }
 
     &:active {
@@ -38,24 +32,9 @@
 
   button.slide-button-next {
     transform: rotate(-180deg);
-  }
 
-  @media (min-width: @tablet-width) {
-    top: auto;
-    left: auto;
-    right: 0;
-    bottom: -49px;
-    z-index: 101;
-    width: 100px;
-  }
-
-  @media (min-width: @desktop-width) {
-    bottom: 0;
-  }
-
-  @media (min-width: @desktop-ultra-w) {
-    width: 73px;
-    right: 40px;
-    bottom: 0;
+    &:hover {
+      transform: translateX(2px) rotate(-180deg) scale(0.9);
+    }
   }
 }

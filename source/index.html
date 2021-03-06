@@ -24,7 +24,7 @@
       </button>
       <ul class="site-list" id="site-list">
         <li>
-          <a class="contacts site-fx" href="#">Контакты</a>
+          <a class="contacts site-fx" href="#footer-contacts">Контакты</a>
         </li>
       </ul>
     </nav>
@@ -36,23 +36,24 @@
           <h1>Ремонт квартир в типовых домах</h1>
           <p>Готовый дизайн-проект, работы и материалы за 3 месяца от 610 т.р.</p>
           <div class="learn-more">
-            <a class="button site-fx" href="#">Узнайте о запуске первым</a>
+            <a class="button site-fx" href="#subscribe-form">Узнайте о запуске первым</a>
             <span>Старт весной 2016</span>
           </div>
         </div>
       </div>
-      <a class="scroll-button site-fx" href="#">Листайте вниз,
+      <a class="scroll-button site-fx" href="#feature-info">Листайте вниз,
         чтобы ничего не упустить</a>
       <div class="promo-video">
         <video muted src="#" poster="img/video-poster.jpg">
         </video>
         <div class="video-controls">
-          <button class="play-button site-fx" type="button" aria-label="Кнопка управления видеоплеером"></button>
+          <button class="play-button site-fx" type="button" aria-label="Кнопка управления видеоплеером">
+          </button>
           <span>Смотерть видео</span>
         </div>
       </div>
     </section>
-    <section class="features section-common">
+    <section class="features section-common" id="feature-info">
       <h2 class="visually-hidden">Приемущества нашей компании</h2>
       <div class="container">
         <p class="slogan">
@@ -98,42 +99,42 @@
             </li>
             <li>
               <a href="#">
-                <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
+                <img src="img/carousel-img-0.jpg" width="750" height="500" alt="Изображение интерьера">
               </a>
               <p>2 Кафельная плиткав ванной комнате
                 в скандинавском стиле</p>
             </li>
             <li>
               <a href="#">
-                <img src="img/carousel-img-2.jpg" width="750" height="500" alt="Изображение интерьера">
+                <img src="img/carousel-img-0.jpg" width="750" height="500" alt="Изображение интерьера">
               </a>
               <p>3 Кафельная плиткав ванной комнате
                 в скандинавском стиле</p>
             </li>
             <li>
               <a href="#">
-                <img src="img/carousel-img-3.jpg" width="750" height="500" alt="Изображение интерьера">
+                <img src="img/carousel-img-0.jpg" width="750" height="500" alt="Изображение интерьера">
               </a>
               <p>4 Кафельная плиткав ванной комнате
                 в скандинавском стиле</p>
             </li>
             <li>
               <a href="#">
-                <img src="img/carousel-img-4.jpg" width="750" height="500" alt="Изображение интерьера">
+                <img src="img/carousel-img-0.jpg" width="750" height="500" alt="Изображение интерьера">
               </a>
               <p>5 Кафельная плиткав ванной комнате
                 в скандинавском стиле</p>
             </li>
             <li>
               <a href="#">
-                <img src="img/carousel-img-5.jpg" width="750" height="500" alt="Изображение интерьера">
+                <img src="img/carousel-img-0.jpg" width="750" height="500" alt="Изображение интерьера">
               </a>
               <p>6 Кафельная плиткав ванной комнате
                 в скандинавском стиле</p>
             </li>
             <li>
               <a href="#">
-                <img src="img/carousel-img-6.jpg" width="750" height="500" alt="Изображение интерьера">
+                <img src="img/carousel-img-0.jpg" width="750" height="500" alt="Изображение интерьера">
               </a>
               <p>7 Кафельная плиткав ванной комнате
                 в скандинавском стиле</p>
@@ -148,7 +149,7 @@
         </div>
       </div>
     </section>
-    <section class="subscribe section-common">
+    <section class="subscribe section-common" id="subscribe-form">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <div class="container">
         <form class="form" action="#" method="post">
@@ -171,7 +172,7 @@
               <div class="feedback-submit">
                 <button class="submit button site-fx">Подписаться</button>
                 <p class="feedback-requred">
-                  * Обязательные для заполнения поля <span>Политика конфиденциальности</span>
+                  * Обязательные для заполнения поля <a class="site-fx" href="#">Политика конфиденциальности</a>
                 </p>
               </div>
             </div>
@@ -180,7 +181,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer section-common">
+  <footer class="footer section-common" id="footer-contacts">
     <div class="container">
       <ul class="socials">
         <li><a class="site-fx" href="#">
@@ -217,6 +218,15 @@
       © FIX Ремонт, 2016
     </p>
   </footer>
+  <template id="modal">
+    <section class="modal">
+      <div class="modal-content">
+        <h2>Узнайте о запуске сервиса первым</h2>
+        <p>Спасибо! Мы будем держать
+          вас в курсе обновлений</p>
+      </div>
+    </section>
+  </template>
   <script src="js/menu-toggler.js"></script>
   <script src="js/carousel.js"></script>
 </body>

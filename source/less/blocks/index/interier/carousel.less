@@ -1,17 +1,20 @@
 // carousel
 
-.carousel {
+html > body > main > section.interier > div.container > div.carousel {
   position: relative;
-  width: 100%;
-  height: 100%;
 }
 
-.carousel-list {
+html
+  > body
+  > main
+  > section.interier
+  > div.container
+  > div.carousel
+  > ul.carousel-list {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  min-height: 500px;
+  justify-content: center;
   .mp-reset();
   list-style: none;
 
@@ -22,9 +25,10 @@
     left: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    max-height: 540px;
+    max-width: 920px;
     background-color: @basic-white;
     opacity: 0;
     overflow-x: hidden;
@@ -35,73 +39,64 @@
     transition-timing-function: linear;
 
     a {
-      width: 750px;
+      margin-bottom: 12px;
 
       img {
         width: 100%;
-        max-height: 500px;
-        object-fit: contain;
       }
     }
 
     p {
+      min-height: 38px;
+      padding-right: 50px;
       font-size: 13px;
       line-height: 1.53;
     }
-  }
 
-  @media (min-width: @tablet-width) {
-    a {
-      img {
+    @media (min-width: @tablet-width) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      a {
         margin-bottom: 20px;
       }
-    }
 
-    p {
-      width: 80%;
-      padding-right: 120px;
-    }
-  }
-
-  @media (min-width: @desktop-width) {
-    a {
-      img {
-        margin-bottom: 0;
+      p {
+        width: 244px;
+        min-height: auto;
+        padding-right: 0;
       }
     }
 
-    p {
-      width: 20%;
-      padding-right: 0;
-      padding-bottom: 50px;
+    @media (min-width: @desktop-width) {
+      a {
+        margin-bottom: 0;
+      }
+
+      p {
+        width: 144px;
+      }
     }
   }
 
-  @media (min-width: @desktop-ultra-w) {
-    li {
-      width: 912px;
-    }
+  // * states
 
-    p {
-      width: 144px;
-    }
+  li.current {
+    z-index: 101;
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0) scale(1);
   }
-}
 
-li.current {
-  z-index: 101;
-  position: static;
-  visibility: visible;
-  opacity: 1;
-  transform: translateX(0) scale(1);
-}
+  li.prev {
+    position: absolute;
+    transform: translateX(calc(-100% - 70px)) scale(0.6);
+  }
 
-li.prev {
-  position: absolute;
-  transform: translateX(calc(-100% - 70px)) scale(0.6);
-}
-
-li.next {
-  position: absolute;
-  transform: translateX(calc(100% + 70px)) scale(0.6);
+  li.next {
+    position: absolute;
+    transform: translateX(calc(100% + 70px)) scale(0.6);
+  }
 }

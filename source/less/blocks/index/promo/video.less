@@ -42,14 +42,14 @@
     transform: translate(50%, -50%);
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: @desktop-ultra-w) {
     width: 250px;
     min-height: 299px;
   }
 
   span {
     color: @page-red;
-    font-size: 1em;
+    font-size: 16px;
     line-height: 1.148;
     display: none;
 
@@ -57,8 +57,8 @@
       display: block;
     }
 
-    @media (min-width: 1440px) {
-      font-size: 1.313em;
+    @media (min-width: @desktop-ultra-w) {
+      font-size: 21px;
     }
   }
 }
@@ -76,6 +76,11 @@
 
   &:hover {
     opacity: 0.6;
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(1.02) translateY(2px);
   }
 
   @media (min-width: @tablet-width) {
@@ -88,7 +93,7 @@
     margin-bottom: 19px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: @desktop-ultra-w) {
     width: 250px;
     height: 250px;
   }
