@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <nav class="navigation">
+    <nav class="navigation navigation-nojs">
       <a class="logo">
         <img src="img/page-logotype.svg" width="200" height="55" alt="Логотип Fix Ремонт">
       </a>
@@ -29,16 +29,6 @@
       </ul>
     </nav>
   </header>
-  <script>
-    "use strict";
-    const menu = document.querySelector('.navigation');
-    const burger = document.querySelector('.burger');
-
-    burger.addEventListener('click', (evt) => {
-      evt.preventDefault();
-      menu.classList.toggle('active');
-    })
-  </script>
   <main>
     <section class="promo">
       <div class="content">
@@ -89,6 +79,75 @@
         </ul>
       </div>
     </section>
+    <section class="interier section-common">
+      <h2 class="visually-hidden">Примеры интерьера</h2>
+      <div class="container">
+        <p class="slogan">
+          <b>3 стиля интерьера</b>
+          <span>Скандинавский, классический и эко-стиль</span>
+        </p>
+        <div class="carousel">
+          <ul class="carousel-list">
+            <li class="current">
+              <a href="#">
+                <img src="img/carousel-img-0.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>1 Кафельная плиткав ванной комнате
+                в скандинавском стиле
+              </p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>2 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/carousel-img-2.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>3 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/carousel-img-3.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>4 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/carousel-img-4.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>5 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/carousel-img-5.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>6 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/carousel-img-6.jpg" width="750" height="500" alt="Изображение интерьера">
+              </a>
+              <p>7 Кафельная плиткав ванной комнате
+                в скандинавском стиле</p>
+            </li>
+          </ul>
+          <ul class="buttons">
+            <li><button class="slide-button-prev" type="button"><span class="visually-hidden">Предыдущий
+                  слайд</span></button></li>
+            <li><button class="slide-button-next" type="button"><span class="visually-hidden">Следующий
+                  слайд</span></button></li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <section class="subscribe section-common">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <div class="container">
@@ -120,73 +179,6 @@
         </form>
       </div>
     </section>
-    <!-- <section class="interier">
-      <h2 class="visually-hidden">Примеры интерьера</h2>
-      <div class="container">
-        <p class="slogan">
-          <b>3 стиля интерьера</b>
-          <span>Скандинавский, классический и эко-стиль</span>
-        </p>
-        <ul class="buttons">
-          <li><button class="slide-button-prev" type="button"><span class="visually-hidden">Предыдущий
-                слайд</span></button></li>
-          <li><button class="slide-button-next" type="button"><span class="visually-hidden">Следующий
-                слайд</span></button></li>
-        </ul>
-      </div>
-      <div class="carousel">
-        <ul class="carousel-list">
-          <li class="current">
-            <a href="#">
-              <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
-            </a>
-            <p>Кафельная плиткав ванной комнате
-              в скандинавском стиле</p>
-          </li>
-          <li class="prev next">
-            <a href="#">
-              <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
-            </a>
-            <p>Кафельная плиткав ванной комнате
-              в скандинавском стиле</p>
-          </li>
-          <li class="prev next">
-            <a href="#">
-              <img src="img/carousel-img-1.jpg" width="750" height="500" alt="Изображение интерьера">
-            </a>
-            <p>Кафельная плиткав ванной комнате
-              в скандинавском стиле</p>
-          </li>
-        </ul>
-      </div>
-    </section> -->
-    <!-- <script>
-      "use strict";
-
-      const carouselContainer = document.querySelector('.carousel');
-      const carousel = carouselContainer.querySelector('.carousel-list');
-      const CarouselMap = {
-        slideWidth: carousel.querySelector('.carousel-list li').offsetWidth,
-        slideCount: carousel.children.length,
-      }
-
-      carouselContainer.addEventListener('click', evt => {
-        let Buttons = {
-          prev: evt.target.closest('.slide-button-prev'),
-          next: evt.target.closest('.slide-button-next'),
-        }
-
-        if (!Buttons.prev && !Buttons.next) return;
-
-        if (Buttons.prev) {
-          console.log(CarouselMap.slideWidth, CarouselMap.slideCount);
-
-        }
-
-        if (Buttons.next) {
-        }
-      });
-    </script> -->
   </main>
   <footer class="footer section-common">
     <div class="container">
@@ -225,6 +217,8 @@
       © FIX Ремонт, 2016
     </p>
   </footer>
+  <script src="js/menu-toggler.js"></script>
+  <script src="js/carousel.js"></script>
 </body>
 
 </html>

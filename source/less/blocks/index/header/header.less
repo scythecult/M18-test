@@ -100,6 +100,29 @@ html > body > header > nav.navigation > ul.site-list > li a.contacts {
 
 // * menu states
 
+html > body > header > nav.navigation.navigation-nojs a.logo {
+  .centered();
+
+  @media (min-width: @tablet-width) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+html > body > header > nav.navigation.navigation-nojs button.burger {
+  display: none;
+
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
+}
+
+html > body > header > nav.navigation.navigation-nojs ul.site-list {
+  position: static;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 html > body > header > nav.navigation.active ul.site-list {
   position: static;
   opacity: 1;
@@ -110,10 +133,22 @@ html > body > header > nav.navigation > button.burger > svg > use.burger-cross {
   display: none;
 }
 
-html > body > header > nav.navigation.active > button.burger > svg > use.burger-cross {
+html
+  > body
+  > header
+  > nav.navigation.active
+  > button.burger
+  > svg
+  > use.burger-cross {
   display: block;
 }
 
-html > body > header > nav.navigation.active > button.burger > svg > use.burger-menu {
+html
+  > body
+  > header
+  > nav.navigation.active
+  > button.burger
+  > svg
+  > use.burger-menu {
   display: none;
 }

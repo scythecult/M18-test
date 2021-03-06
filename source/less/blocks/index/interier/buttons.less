@@ -2,26 +2,25 @@
 
 .buttons {
   position: absolute;
-  z-index: 101;
-  left: 50%;
-  bottom: -120px;
+  top: calc(50% - 43px);
+  left: -22px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 250px;
+  width: calc(100% + 45px);
   .mp-reset();
   list-style: none;
-  transform: translateX(-50%);
 
   button {
-    width: 20px;
+    z-index: 102;
+    width: 25px;
     min-height: 43px;
     .mp-reset();
     border: none;
     background-color: transparent;
     background-image: url("../img/icon-arrow.svg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
     cursor: pointer;
     transition-property: opacity;
@@ -42,23 +41,21 @@
   }
 
   @media (min-width: @tablet-width) {
-    width: 73px;
+    top: auto;
     left: auto;
-    right: -140px;
-    bottom: -385px;
-
-    button {
-      width: 20px;
-      min-height: 43px;
-    }
+    right: 0;
+    bottom: -49px;
+    z-index: 101;
+    width: 100px;
   }
 
   @media (min-width: @desktop-width) {
-    right: -160px;
-    bottom: -480px;
+    bottom: 0;
   }
 
   @media (min-width: @desktop-ultra-w) {
-    right: 60px;
+    width: 73px;
+    right: 40px;
+    bottom: 0;
   }
 }
