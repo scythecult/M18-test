@@ -1,5 +1,9 @@
 class Carousel {
   constructor({ carouselContainer, carousel, carouselElements, states }) {
+    this._Slide = {
+      START: 0,
+      POSITION: 1,
+    };
     this._carouselContainer = carouselContainer;
     this._carousel = carousel;
     this._carouselElements = carouselElements;
@@ -40,9 +44,9 @@ class Carousel {
   }
 
   getNextSlide(name) {
-    this.increaser.set(this.counter() - 1);
+    this.increaser.set(this.counter() - this._Slide.POSITION);
     if (this.counter() >= this._carouselElements.length - 1) {
-      this._carouselElements[this.counter.set(this.currentValue)].classList.add(
+      this._carouselElements[this.counter.set(this._Slide.START)].classList.add(
         name
       );
       this._carouselElements[
@@ -57,13 +61,13 @@ class Carousel {
   }
 
   getPrevSlide(name) {
-    this.increaser.set(this.counter() + 1);
-    if (this.counter() <= this.currentValue) {
+    this.increaser.set(this.counter() + this._Slide.POSITION);
+    if (this.counter() <= 0) {
       this._carouselElements[
         this.counter.set(this._carouselElements.length - 1)
       ].classList.add(name);
       this._carouselElements[
-        this.increaser.set(this.currentValue)
+        this.increaser.set(this._Slide.START)
       ].classList.add(this._States.next);
     } else {
       this._carouselElements[this.increaser.dec()].classList.add(
